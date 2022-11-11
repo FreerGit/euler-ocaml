@@ -1,0 +1,12 @@
+(executable
+ (public_name euler)
+ (name main)
+ (libraries
+  euler
+  core
+  cmdliner
+  euler_solution_helpers
+  core_bench
+  euler_solutions)
+ (preprocess
+  (pps ppx_jane)))
