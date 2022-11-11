@@ -1,6 +1,7 @@
 (library
  (name euler_solutions)
- (libraries core euler)
+ (libraries core euler core_bench.inline_benchmarks)
  (inline_tests)
+ (library_flags -linkall)
  (preprocess
-  (pps ppx_jane ppx_expect)))
+  (pps ppx_jane ppx_expect ppx_bench)))

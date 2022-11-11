@@ -16,6 +16,7 @@ depends: [
   "ppx_jane"
   "ppx_string"
   "ppx_expect"
+  "ppx_bench"
   "odoc" {with-doc}
 ]
 build: [
