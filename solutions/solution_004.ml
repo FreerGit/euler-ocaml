@@ -14,4 +14,4 @@ let largest_palindrome =
 ;;
 
 let%test_unit "largest palindrome" = [%test_result: int] largest_palindrome ~expect:906609
-let%bench "largest palindrome" = largest_palindrome
+let%bench "largest palindrome" = largest_palindrome = 906609
