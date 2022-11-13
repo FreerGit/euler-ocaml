@@ -31,6 +31,9 @@ When running tests that require the filesystem, remember that by default your in
 ### ppx_bench
 Look at bench/runner.sh to understand how it's linked, the exports are important.
 
+### Core - random learnings
+  * Base.With_return is great for wrapping imperative loops, for-loop that needs an exit case is an great example. (See solution_009)
+
 ### Async
 Kind of struggling, very little documentation but here's what i've gathered so far:
   * The scheduler has to be turned on at some point
