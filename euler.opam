@@ -10,6 +10,7 @@ doc: "https://github.com/FreerGit/euler-ocaml"
 bug-reports: "https://github.com/FreerGit/euler-ocaml/issues"
 depends: [
   "dune" {>= "3.5"}
+  "async"
   "core"
   "core_bench"
   "cmdliner"

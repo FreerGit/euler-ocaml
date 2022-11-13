@@ -53,16 +53,17 @@ let%test_unit "NOT prime" = [%test_result: bool] (is_prime' 8888) ~expect:false
 
 (* This could of course be a test_unit but good ot practice both, and ~f becomes long. *)
 
-(* like 50x slower.... *)
-(* let%expect_test "test" =
+let%expect_test "test" =
   find_prime 10_001 |> printf "%d\n";
   [%expect {| 104743 |}]
-;; *)
+;;
 
 let%expect_test "test" =
   find_prime' 10_001 |> printf "%d\n";
   [%expect {| 104743 |}]
 ;;
 
-let%bench "10_001st prime" = find_prime 10_001
+(* like 50x slower.... *)
+(* let%bench "10_001st prime" = find_prime 10_001 *)
+
 let%bench "10_001st prime (6k+i)" = find_prime' 10_001

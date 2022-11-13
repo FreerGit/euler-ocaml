@@ -1,7 +1,7 @@
 (library
  (name euler)
- (public_name euler)
- (libraries core)
+ (libraries core async core_unix.command_unix)
  (inline_tests)
+ (library_flags -linkall)
  (preprocess
-  (pps ppx_jane)))
+  (pps ppx_jane ppx_let)))

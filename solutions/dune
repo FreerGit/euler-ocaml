@@ -1,7 +1,8 @@
 (library
  (name euler_solutions)
- (libraries core euler core_bench.inline_benchmarks iter)
- (inline_tests)
+ (libraries async core euler core_bench.inline_benchmarks iter)
+ (inline_tests (deps (glob_files ../data/*)))
+ (flags (:standard -short-paths))
  (library_flags -linkall)
  (preprocess
-  (pps ppx_jane ppx_expect ppx_bench)))
+  (pps ppx_jane ppx_bench ppx_let)))
