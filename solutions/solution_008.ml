@@ -2,7 +2,7 @@ open! Core
 open! Import
 open! Async
 
-let thousand_digits = Get_data.get_problem_data 8
+let thousand_digits () = Get_data.get_problem_data_string 8
 
 let split_13 str =
   Iter.int_range ~start:0 ~stop:(String.length str - 13)
@@ -16,12 +16,12 @@ let split_13 str =
 ;;
 
 let largest_product () =
-  let%bind str = thousand_digits in
+  let%bind str = thousand_digits () in
   return (split_13 str)
 ;;
 
 let%expect_test "largest product" =
-  let%bind v = thousand_digits in
+  let%bind v = thousand_digits () in
   String.length v |> printf "%d\n";
   [%expect {| 1000 |}];
   return ()

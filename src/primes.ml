@@ -26,10 +26,9 @@ let generate_primes n =
     | false -> if n > 0 then Sequence.Step.Skip (p + 1, n) else Sequence.Step.Done)
 ;;
 
-
 let generate_primes_upto n =
-  Sequence.unfold_step ~init:(2) ~f:(fun (p) ->
+  Sequence.unfold_step ~init:2 ~f:(fun p ->
     match p < n && is_prime p with
-    | true -> Sequence.Step.Yield (p, (p + 1))
+    | true -> Sequence.Step.Yield (p, p + 1)
     | false -> if p - 1 < n then Sequence.Step.Skip (p + 1) else Sequence.Step.Done)
 ;;

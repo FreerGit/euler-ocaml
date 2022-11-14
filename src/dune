@@ -1,6 +1,6 @@
 (library
  (name euler)
- (libraries core async core_unix.command_unix)
+ (libraries iter core async core_unix.command_unix fmt)
  (inline_tests)
  (library_flags -linkall)
  (preprocess
