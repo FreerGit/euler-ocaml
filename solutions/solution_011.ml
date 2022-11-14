@@ -48,12 +48,19 @@ let main grid =
   |> Sequence.concat
   |> Sequence.max_elt ~compare:Int.compare
   |> Option.value_exn
-  |> printf "%d\n"
 ;;
 
 let%expect_test "largest product grid" =
   let%bind grid = Get_data.get_problem_data_grid 11 in
-  main grid;
+  main grid |> printf "%d\n";
   [%expect {| 70600674  |}];
   return ()
+;;
+
+let%bench_fun "largest product" =
+ fun () ->
+  Thread_safe.block_on_async_exn (fun () ->
+    let%bind grid = Get_data.get_problem_data_grid 11 in
+    let _ = main grid in
+    return ())
 ;;

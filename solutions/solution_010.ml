@@ -12,4 +12,4 @@ let%test_unit "sum of primes" =
   [%test_result: int] (sum_of_primes 2_000_000) ~expect:142913828922
 ;;
 
-let%bench "sum of primes" = sum_of_primes 2_000_000
+let%bench "sum of primes (100)" = sum_of_primes 100
