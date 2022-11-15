@@ -18,6 +18,7 @@ depends: [
   "ppx_string"
   "ppx_expect"
   "ppx_bench"
+  "bignum"
   "odoc" {with-doc}
 ]
 build: [

@@ -18,15 +18,15 @@ let divisors n =
   !num_divisors
 ;;
 
-let main () =
+let main over =
   gen_triangle_number 100000000
   |> fun x ->
-  Sequence.find x ~f:(fun n -> divisors n |> Int.( < ) 500) |> Option.value_exn
+  Sequence.find x ~f:(fun n -> divisors n |> Int.( < ) over) |> Option.value_exn
 ;;
 
 let%expect_test "divisors of tria. num" =
-  main () |> printf "%d\n";
+  main 500 |> printf "%d\n";
   [%expect {| 76576500 |}]
 ;;
 
-let%bench "divisors of tria. num" = main ()
+let%bench "divisors of tria. num" = main 100

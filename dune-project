@@ -17,7 +17,7 @@
  (name euler)
  (synopsis "Solutions to https://projecteuler.net/")
  (description "")
- (depends dune async core core_bench cmdliner ppx_jane ppx_string ppx_expect ppx_bench)
+ (depends dune async core core_bench cmdliner ppx_jane ppx_string ppx_expect ppx_bench bignum)
  (tags
   (topics "to describe" your project)))
 
